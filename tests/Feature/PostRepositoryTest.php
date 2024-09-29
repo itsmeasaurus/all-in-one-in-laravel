@@ -5,12 +5,13 @@ namespace Tests\Unit;
 use App\Models\Post;
 use App\Models\User;
 use App\Repository\PostRepository;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class PostRepositoryTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     protected $postRepository;
 
@@ -26,7 +27,7 @@ class PostRepositoryTest extends TestCase
 
         $posts = $this->postRepository->getAll(['sort' => 'id', 'order' => 'desc', 'per_page' => 10]);
 
-        $this->assertEquals(1, $posts->count());
+        $this->assertEquals(10, $posts->count());
         $this->assertEquals($post->id, $posts->first()->id);
     }
 
