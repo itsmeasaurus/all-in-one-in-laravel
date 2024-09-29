@@ -21,5 +21,9 @@ This markdown file documents the development process of a Laravel project. It in
 - Exception
 - Event & event listener & subscriber
 - Sending email
+- Unit Tests, Feature Tests
+- Test API Routes
+- Php unit watcher
+
 
 Please note that this is an ongoing project and more features will be added in the future.
