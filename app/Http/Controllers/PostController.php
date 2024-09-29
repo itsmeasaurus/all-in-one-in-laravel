@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Exceptions\GeneralJsonException;
+use App\Http\Requests\StorePostRequest;
 use App\Http\Resources\PostResource;
-use App\Models\Post;
 use App\Repository\PostRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -33,7 +33,7 @@ class PostController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         try {
             $post = $this->postRepository->create($request->only(['title', 'body', 'user_ids']));
