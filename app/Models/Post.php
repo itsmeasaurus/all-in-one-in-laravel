@@ -32,11 +32,6 @@ class Post extends Model
         return date('Y M d', strtotime($value));   
     }
 
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = strtolower($value);
-    }
-
     public function comments()
     {
         return $this->hasMany(Comment::class);

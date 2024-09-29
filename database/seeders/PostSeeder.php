@@ -24,7 +24,9 @@ class PostSeeder extends Seeder
         $this->disableForeignKey();
         $this->truncateTable('posts');
 
-        $user = User::find(31);
+
+
+        $user = User::first();
 
         $posts = Post::factory()
                 ->count(200)

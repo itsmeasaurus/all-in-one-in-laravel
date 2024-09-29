@@ -1,6 +1,7 @@
 <?php
 
 use App\Helpers\Routes\RouteHelper;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -25,7 +26,11 @@ Route::prefix('v1')
             RouteHelper::loadRoutes(__DIR__ . '/api/v1');
         });
 
-
+Route::get('/test', function() {
+    return response()->json([
+        'message' => 'Hello World'
+    ]);
+});
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\User;
 use Database\Factories\UserFactory;
 use Illuminate\Support\Facades\Mail;
